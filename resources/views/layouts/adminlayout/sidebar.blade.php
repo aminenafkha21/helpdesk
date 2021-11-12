@@ -21,7 +21,7 @@
           </li>
        
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/' . $page='admin.tickets') }}">
+            <a class="nav-link" href="{{ url('/' . $page='tickets') }}">
               <i class="icon-file menu-icon"></i>
               <span class="menu-title">Tickets</span>
             </a>

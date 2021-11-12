@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TicketController;
+
+
 
 
 /*
@@ -22,13 +25,20 @@ Route::get('/', function () {
 
 
 Auth::routes([
-    'register' => false, 
+    
 ]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 Route::middleware('auth')->group(function () {
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('tickets', TicketController::class);
+Route::get('/newticket', [App\Http\Controllers\TicketController::class, 'create']);
+
+
 
 Route::get('/{page}', [AdminController::class, 'index']);
 

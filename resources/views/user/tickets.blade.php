@@ -7,7 +7,11 @@
                 <div class="card-body">
                   <h4 class="card-title">My Tickets</h4>
                   <p class="card-description">
-                    ID 
+                  @if ($message = Session::get('success'))
+                      <div class="alert alert-success">
+                          <p>{{ $message }}</p>
+                      </div>
+                  @endif 
                   </p>
                   <div class="table-responsive">
                     <table class="table table-striped">
@@ -20,87 +24,60 @@
                             Subject
                           </th>
                           <th>
-                            Assigned To 
+                            Service
                           </th>
                           <th>
                             Created At
                           </th>
                           <th>
-                            Status
+                              Criticité
                           </th>
-						  <th>
+                          <th>
+                          Status
+                          </th>
+	            					  <th>
                             Actions
                           </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach ($tickets as $ticket)
+
                         <tr>
-                          <td class="py-1">
-                           1
-                          </td>
-                          <td>
-                            Herman Beck  
-                          </td>
-                          <td>
-                              Technician 1
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-						  <td><label class="badge badge-danger">Pending</label></td>
-						  <td>
-						  <button type="button" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-warning">Edit</button>
-						<button type="button" class="btn btn-info">Detailes</button>
+                                            <td class="py-1">
+                                            {{ $ticket->ref }}                                            
+
+                                            </td>
+                                            <td>
+                                            {{ $ticket->sujet }}                                            
+
+                                           </td>
+                                            <td>
+                                            {{ $ticket->service }}                                            
+                                          </td>
+                                            <td>
+                                            {{ $ticket->created_at }}                                            
+
+                                            </td>
+                                            <td>
+                                            {{ $ticket->created_at }}                                            
+
+                                            </td>
+                                       
+                                <td><label class="badge badge-danger">Pending</label></td>
+                                <td>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                          <button type="button" class="btn btn-warning">Edit</button>
+                              <button type="button" class="btn btn-info">Detailes</button>
 
 
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                               2
-                          </td>
-                          <td>
-                            Messsy Adam
-                          </td>
-                          <td>
-						  Technician 2
 
-                          </td>
-                          <td>
-                            $245.30
-                          </td>
-						  <td><label class="badge badge-warning">In progress</label></td>
-						  <td>   
-							        <button type="button" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-warning">Edit</button>
-						<button type="button" class="btn btn-info">Detailes</button>
+                                            </td>
+                         </tr>
+                         @endforeach
 
-					</td>
-
-                        </tr>
-						<tr>
-                          <td class="py-1">
-                           1
-                          </td>
-                          <td>
-                            Herman Beck
-                          </td>
-                          <td>
-						  Technician 3
-
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-						  <td><label class="badge badge-info">Fixed</label></td>
-						  <td>				     
-							     <button type="button" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-warning">Edit</button>
-						<button type="button" class="btn btn-info">Detailes</button>
-					</td>
-						  
-                        </tr>
+                       
+						
                  
                       </tbody>
                     </table>

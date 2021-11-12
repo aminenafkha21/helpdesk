@@ -16,8 +16,7 @@
                           <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Open Tickets</h4>
-                                <p>23% increase in conversion</p>
-                                <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                                <h4 class="text-dark font-weight-bold mb-2">43</h4>
                             </div>
                           </div>
                       </div>
@@ -30,8 +29,7 @@
                           <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Pending Tickets</h4>
-                                <p>23% increase in conversion</p>
-                                <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                                <h4 class="text-dark font-weight-bold mb-2">43</h4>
                             </div>
                           </div>
                       </div>
@@ -46,8 +44,7 @@
                           <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Solved Tickets</h4>
-                                <p>23% increase in conversion</p>
-                                <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                                <h4 class="text-dark font-weight-bold mb-2">43</h4>
                             </div>
                           </div>
                       </div>
