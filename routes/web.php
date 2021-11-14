@@ -24,9 +24,7 @@ Route::get('/', function () {
 });
 
 
-Auth::routes([
-    
-]);
+Auth::routes([]);
 
 
 
@@ -37,10 +35,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('tickets', TicketController::class);
 Route::get('/newticket', [App\Http\Controllers\TicketController::class, 'create']);
+Route::get('/{page}', [App\Http\Controllers\HomeController::class, 'error']);
 
-
-
-Route::get('/{page}', [AdminController::class, 'index']);
 
 
 });
+
+
+Route::get('/{page}', [App\Http\Controllers\AdminController::class, 'index']);
+
+
+

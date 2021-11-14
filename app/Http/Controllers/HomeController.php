@@ -46,6 +46,31 @@ class HomeController extends Controller
 
         }
     }
+
+    public function error()
+    {
+        
+        $usertype=Auth::user()->user_type;
+
+        if($usertype =="1") {
+            return view('technician.error');
+
+
+        }
+        elseif($usertype =="2") {
+            return view('user.error');
+
+
+        }
+        else {
+            return view('admin.error');
+
+        }
+
+    }
+
+    
+    
    
 
 

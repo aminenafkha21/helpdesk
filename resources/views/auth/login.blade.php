@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Login</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,6 +29,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+  
               
             
         
@@ -43,13 +44,18 @@
               <div class="brand-logo">
                 <img src="{{URL::asset('assets/images/logo-dark.svg')}}" alt="logo">
               </div>
-              <h4>Welcome back!</h4>
-              <h6 class="font-weight-light">Happy to see you again!</h6>
+              <h4>Login</h4>
+              <a class="font-weight-light" href="{{ route('register') }}">Or create a new account!</a>
+              
               <form class="pt-3" method="POST" action="{{ route('login') }}">
               @csrf
 
+                
+                
+
+
                 <div class="form-group">
-                  <label for="exampleInputEmail">Email</label>
+                  <label for="exampleInputEmail">Email*</label>
                   <div class="input-group">
                     <div class="input-group-prepend bg-transparent">
                       <span class="input-group-text bg-transparent border-right-0">
@@ -65,7 +71,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword">Password</label>
+                  <label for="exampleInputPassword">Password*</label>
                   <div class="input-group">
                     <div class="input-group-prepend bg-transparent">
                       <span class="input-group-text bg-transparent border-right-0">
@@ -84,11 +90,15 @@
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
+                      <input type="checkbox" class="form-check-input"  name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} >
                       Keep me signed in
                     </label>
                   </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
+                  @if (Route::has('password.request'))
+
+                  <a class="auth-link text-black" href="{{ route('password.request') }}" >Forgot password?</a>
+                  @endif
+
                 </div>
                 <div class="my-3">
                <button class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" href="../../index.html" type="submit"> LOGIN</button> 
